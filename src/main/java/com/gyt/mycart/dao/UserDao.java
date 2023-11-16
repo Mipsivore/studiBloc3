@@ -7,6 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
+
+/**
+ * Classe servant à faire des opérations CRUD pour l'entité User.
+ * @author Arnaud GUYOT
+ */
 public class UserDao {
     private final SessionFactory factory;
 
