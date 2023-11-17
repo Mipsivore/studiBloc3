@@ -10,8 +10,8 @@
        <!-- <property name="connection.url">jdbc:postgresql://localhost:5432/mycart?serverTimezone=Europe/Paris [mycart on POSTGRES]</property>   -->
        
         <!-- <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com/mycart</property> -->
-        <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com:5432/{your_database}?user=mipsivore@postgre-mercadona&password=Mandragore46$&sslmode=require</property>
-        jdbc:postgresql://postgre-mercadona.postgres.database.azure.com:5432/{your_database}?user=mipsivore@postgre-mercadona&password={your_password}&sslmode=require
+        <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com:5432/mycart?user=mipsivore@postgre-mercadona&password=Mandragore46$&sslmode=require</property>
+  
         <property name="connection.username">mipsivore@postgre-mercadona</property>        
         <property name="connection.password">Mandragore46$</property>
         
