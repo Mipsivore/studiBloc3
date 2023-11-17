@@ -1,10 +1,9 @@
-package com.gyt.mycart.servlets;
+package com.learn.mycart.servlets;
 
-import com.gyt.mycart.entities.UserP;
-import com.gyt.mycart.helper.FactoryProvider;
+import com.learn.mycart.entities.User;
+import com.learn.mycart.helper.FactoryProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +18,11 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. */
             
             try {
                 
-                
-                String userName = request.getParameter("user_name"); 
-                byte[] bytes = userName.getBytes(StandardCharsets.ISO_8859_1);
-                userName = new String(bytes, StandardCharsets.UTF_8);
-                
+                String userName = request.getParameter("user_name");
                 String userEmail = request.getParameter("user_email");
                 String userPassword = request.getParameter("user_password");
                 String userPhone = request.getParameter("user_phone");
@@ -35,18 +30,18 @@ public class RegisterServlet extends HttpServlet {
 
                 // validations
                 if (userName.isEmpty()) {
-                    out.println("Votre nom est vide ! ");
+                    out.println("Name is blank ");
                     return;
                 }
                 //creating user object to store data
-                UserP user = new UserP(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress, "normal");
+                User user = new User(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress, "normal");
                 Session hibernateSession = FactoryProvider.getFactory().openSession();
                 Transaction tx = hibernateSession.beginTransaction();                
                 int userId = (int) hibernateSession.save(user);                
                 tx.commit();
                 hibernateSession.close();                
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Inscription réussie !! Votre identifiant est " + userId);                
+                httpSession.setAttribute("message", "Registration Successful !! User id is " + userId);                
                 response.sendRedirect("register.jsp");
                 return;
                 
@@ -96,7 +91,7 @@ public class RegisterServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Description courte";
+        return "Short description";
     }// </editor-fold>
 
 }

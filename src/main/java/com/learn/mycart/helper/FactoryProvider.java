@@ -1,4 +1,4 @@
-package com.gyt.mycart.helper;
+package com.learn.mycart.helper;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

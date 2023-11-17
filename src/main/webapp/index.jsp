@@ -1,18 +1,18 @@
 
 
-<%@page import="com.gyt.mycart.helper.Helper"%>
-<%@page import="com.gyt.mycart.entities.Category"%>
-<%@page import="com.gyt.mycart.dao.CategoryDao"%>
-<%@page import="com.gyt.mycart.entities.Product"%>
+<%@page import="com.learn.mycart.helper.Helper"%>
+<%@page import="com.learn.mycart.entities.Category"%>
+<%@page import="com.learn.mycart.dao.CategoryDao"%>
+<%@page import="com.learn.mycart.entities.Product"%>
 <%@page import="java.util.List"%>
-<%@page import="com.gyt.mycart.dao.ProductDao"%>
-<%@page import="com.gyt.mycart.helper.FactoryProvider"%>
+<%@page import="com.learn.mycart.dao.ProductDao"%>
+<%@page import="com.learn.mycart.helper.FactoryProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Offres promotionnelles Mercadona - Accueil</title>
+        <title>MyCart - Home </title>
         <%@include file="components/common_css_js.jsp" %>
 
     </head>
@@ -53,7 +53,7 @@
                     <div class="list-group mt-4">
 
                         <a href="index.jsp?category=all" class="list-group-item list-group-item-action active">
-                            Tous les produits
+                            All Products
                         </a>
 
 
@@ -117,8 +117,8 @@
                                     </div>
 
                                     <div class="card-footer text-center">
-                                        <button class="btn custom-bg text-white" onclick="add_to_cart(<%= p.getpId()%>, '<%= p.getpName()%>',<%= p.getPriceAfterApplyingDiscount()%>)">Ajouter</button>
-                                        <button class="btn  btn-outline-success ">  &#8377; <%= p.getPriceAfterApplyingDiscount()%>/-  <span class="text-secondary discount-label">  &#8364; <%= p.getpPrice()%> , <%= p.getpDiscount()%>% off </span>  </button>
+                                        <button class="btn custom-bg text-white" onclick="add_to_cart(<%= p.getpId()%>, '<%= p.getpName()%>',<%= p.getPriceAfterApplyingDiscount()%>)">Add to Cart</button>
+                                        <button class="btn  btn-outline-success ">  &#8377; <%= p.getPriceAfterApplyingDiscount()%>/-  <span class="text-secondary discount-label">  &#8377; <%= p.getpPrice()%> , <%= p.getpDiscount()%>% off </span>  </button>
 
                                     </div>
 
@@ -134,7 +134,7 @@
                                 <%}
 
                                     if (list.size() == 0) {
-                                        out.println("<h3>Aucun produit dans cette catégorie</h3>");
+                                        out.println("<h3>No item in this category</h3>");
                                     }
 
 

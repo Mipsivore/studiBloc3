@@ -16,7 +16,6 @@
     
     <dependencies>
         
-        <!-- Dépendance pour une application Web en Java (JSP/ Servlet) -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -24,8 +23,6 @@
             <scope>provided</scope>
         </dependency>
         
-        <!-- ORM Implémentant JPA pour faire le lien objets métier 
-        / persistance -->
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -33,38 +30,21 @@
             <version>5.4.2.Final</version>
         </dependency>
 
-        <!-- Connecteur pour une BDD avec MySQL -->
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.48</version>
-        </dependency>
-        
-        <!-- Connecteur pour une BDD avec PostgreSql -->
+     
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
-        </dependency>
-        
-        <!-- Plugin pour gérer le War avec Maven -->
+        </dependency> 
+          
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <version>3.4.0</version>
         </dependency>
-
-        <!-- Framework de test pour Java -->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.13.1</version>
-                <scope>test</scope>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat8-maven-plugin -->     
         
         
         

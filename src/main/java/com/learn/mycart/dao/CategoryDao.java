@@ -1,6 +1,6 @@
-package com.gyt.mycart.dao;
+package com.learn.mycart.dao;
 
-import com.gyt.mycart.entities.Category;
+import com.learn.mycart.entities.Category;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

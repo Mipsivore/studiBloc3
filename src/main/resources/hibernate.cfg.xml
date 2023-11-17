@@ -3,31 +3,36 @@
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    
-    <!-- Session Factory basée sur PostGreSql --> 
     <session-factory>
-        <!-- Database connection properties -->
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mycart</property>
-        <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">Mandragore46$</property>
-
-        <!-- Other Hibernate properties -->
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-
-        <property name="connection_pool_size">5</property>
-
-        <!-- first time it is create and then onwards update -->
-        <property name="hbm2ddl.auto">update</property>
-
-        <!-- Mapping files or annotated classes --> 
-        <!-- Add your entity classes or mapping files here  for ex: entity used below -->
-        <mapping class="com.gyt.mycart.entities.UserP" />  
-        <mapping class="com.gyt.mycart.entities.Category" />  
-        <mapping class="com.gyt.mycart.entities.Product" />  
-
-     </session-factory>
+        <!-- Database connection settings -->       
+        <property name="connection.driver_class">org.postgresql.Driver</property> 
+           
+       <!-- <property name="connection.url">jdbc:postgresql://localhost:5432/mycart?serverTimezone=Europe/Paris [mycart on POSTGRES]</property>   -->
+       
+        <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com/mycart</property>
+        <property name="connection.username">mipsivore@postgre-mercadona</property>        
+        <property name="connection.password">Mandragore46$</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">3</property>
+        <!-- SQL dialect -->       
+        <property name="dialect">org.hibernate.dialect.PostgreSQL92Dialect</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <mapping class="com.learn.mycart.entities.User" />  
+        <mapping class="com.learn.mycart.entities.Category" />  
+        <mapping class="com.learn.mycart.entities.Product" />  
+            
+        
+    </session-factory>
     
 </hibernate-configuration>

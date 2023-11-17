@@ -1,4 +1,4 @@
-package com.gyt.mycart.entities;
+package com.learn.mycart.entities;
 
 import java.util.ArrayList;
 import java.util.List;

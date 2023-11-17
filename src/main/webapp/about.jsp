@@ -14,8 +14,8 @@
 
        
         <div class="jumbotron">
-            <h1>A propos</h1>
-            <p>Ce site a été developpé en Java dans le cadre d'un projet de fin de formation chez STUDI - Realisation Novembre 2023</p>
+            <h1>About My Cart website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, expedita, neque laudantium fugiat adipisci cumque impedit magni delectus debitis libero corporis nemo quis voluptate nobis at. Obcaecati, iste aspernatur dicta assumenda laboriosam nemo voluptatibus consectetur perspiciatis delectus temporibus! Cumque ipsa similique placeat eveniet doloribus corrupti facilis accusantium veniam neque autem!</p>
         </div>
 
         <%@include  file="components/common_modals.jsp" %>

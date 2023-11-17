@@ -1,8 +1,10 @@
-package com.gyt.mycart.servlets;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.learn.mycart.servlets;
 
-import com.gyt.mycart.dao.UserDao;
-import com.gyt.mycart.entities.UserP;
-import com.gyt.mycart.helper.FactoryProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,47 +13,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginServlet extends HttpServlet {
+/**
+ *
+ * @author Durgesh
+ */
+public class LogoutServlet extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
-            //coding area
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-
-            //validations
-            //authenticating user
-            UserDao userDao = new UserDao(FactoryProvider.getFactory());
-            UserP user = userDao.getUserByEmailAndPassword(email, password);
-
-            //System.out.println(user);
+         
+            
             HttpSession httpSession = request.getSession();
-            if (user == null) {
-                httpSession.setAttribute("message", "Saisies invalides !! Veuillez corriger");
-                response.sendRedirect("login.jsp");
-                return;
-            } else {
-                out.println("<h1>Bienvenue " + user.getUserName() + " </h1>");
-
-                //login
-                httpSession.setAttribute("current-user", user);
-
-                if (user.getUserType().equals("admin")) {
-                    //admin:-admin.jsp
-                    response.sendRedirect("admin.jsp");
-                } else if (user.getUserType().equals("normal")) {
-                    //normal :normal.jsp
-                    response.sendRedirect("normal.jsp");
-                }else
-                {
-                    out.println("Nous ne parvenons pas a identifier le type d'utilisateur");
-                }
-
-            }
-
+            httpSession.removeAttribute("current-user");
+            response.sendRedirect("login.jsp");
+            
+            
+            
+            
         }
     }
 
@@ -91,7 +80,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Description courte";
+        return "Short description";
     }// </editor-fold>
 
 }

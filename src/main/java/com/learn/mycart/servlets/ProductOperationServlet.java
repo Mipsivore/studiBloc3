@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.gyt.mycart.servlets;
+package com.learn.mycart.servlets;
 
-import com.gyt.mycart.dao.CategoryDao;
-import com.gyt.mycart.dao.ProductDao;
-import com.gyt.mycart.entities.Category;
-import com.gyt.mycart.entities.Product;
-import com.gyt.mycart.helper.FactoryProvider;
+import com.learn.mycart.dao.CategoryDao;
+import com.learn.mycart.dao.ProductDao;
+import com.learn.mycart.entities.Category;
+import com.learn.mycart.entities.Product;
+import com.learn.mycart.helper.FactoryProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -52,7 +52,7 @@ public class ProductOperationServlet extends HttpServlet {
                 int catId = categoryDao.saveCategory(category);
 //                out.println("Category Saved");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Category ajoutée : " + catId);
+                httpSession.setAttribute("message", "Category added successfully : " + catId);
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -111,9 +111,9 @@ public class ProductOperationServlet extends HttpServlet {
                     e.printStackTrace();
                 }
 
-                out.println("Produit sauvegardé...");
+                out.println("Product save sucess...");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Le produit a été ajouté...");
+                httpSession.setAttribute("message", "Product is added successfully..");
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -158,7 +158,7 @@ public class ProductOperationServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Description courte";
+        return "Short description";
     }// </editor-fold>
 
 }

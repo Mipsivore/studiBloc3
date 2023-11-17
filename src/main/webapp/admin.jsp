@@ -1,14 +1,14 @@
-<%@page import="com.gyt.mycart.entities.Category"%>
+<%@page import="com.learn.mycart.entities.Category"%>
 <%@page import="java.util.List"%>
-<%@page import="com.gyt.mycart.helper.FactoryProvider"%>
-<%@page import="com.gyt.mycart.dao.CategoryDao"%>
-<%@page import="com.gyt.mycart.entities.UserP"%>
+<%@page import="com.learn.mycart.helper.FactoryProvider"%>
+<%@page import="com.learn.mycart.dao.CategoryDao"%>
+<%@page import="com.learn.mycart.entities.User"%>
 <%
 
-    UserP user = (UserP) session.getAttribute("current-user");
+    User user = (User) session.getAttribute("current-user");
     if (user == null) {
 
-        session.setAttribute("message", "Vous n'êtes pas connecté!! Veuillez vous enregistrer");
+        session.setAttribute("message", "You are not logged in !! Login first");
         response.sendRedirect("login.jsp");
         return;
 
@@ -16,7 +16,7 @@
 
         if (user.getUserType().equals("normal")) {
 
-            session.setAttribute("message", "Vous n'avez pas un profil administrateur, n'accédez pas à cette page !");
+            session.setAttribute("message", "You are not admin ! Do not access this page");
             response.sendRedirect("login.jsp");
             return;
 
