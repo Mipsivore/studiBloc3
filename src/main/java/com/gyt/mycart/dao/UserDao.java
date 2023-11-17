@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 
 
 /**
- * Classe servant à faire des opérations CRUD pour l'entité User.
+ * Class used to perform CRUD operations for the User entity.
  * @author Arnaud GUYOT
  */
 public class UserDao {
@@ -25,7 +25,7 @@ public class UserDao {
         UserP user=null;
         
         try {
-            // Préparation de la requête
+            // Preparing the request
             String query="from UserP where userEmail =: e and userPassword=: p";
             try (Session session = this.factory.openSession()) {
                 Query q = session.createQuery(query);
