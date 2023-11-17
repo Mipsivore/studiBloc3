@@ -8,7 +8,7 @@
     UserP user = (UserP) session.getAttribute("current-user");
     if (user == null) {
 
-        session.setAttribute("message", "You are not logged in !! Login first");
+        session.setAttribute("message", "Vous n'êtes pas connecté!! Veuillez vous enregistrer");
         response.sendRedirect("login.jsp");
         return;
 
@@ -16,7 +16,7 @@
 
         if (user.getUserType().equals("normal")) {
 
-            session.setAttribute("message", "You are not admin ! Do not access this page");
+            session.setAttribute("message", "Vous n'avez pas un profil administrateur, n'accédez pas à cette page !");
             response.sendRedirect("login.jsp");
             return;
 

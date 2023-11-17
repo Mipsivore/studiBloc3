@@ -52,7 +52,7 @@ public class ProductOperationServlet extends HttpServlet {
                 int catId = categoryDao.saveCategory(category);
 //                out.println("Category Saved");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Category added successfully : " + catId);
+                httpSession.setAttribute("message", "Category ajoutée : " + catId);
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -111,9 +111,9 @@ public class ProductOperationServlet extends HttpServlet {
                     e.printStackTrace();
                 }
 
-                out.println("Product save sucess...");
+                out.println("Produit sauvegardé...");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Product is added successfully..");
+                httpSession.setAttribute("message", "Le produit a été ajouté...");
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -158,7 +158,7 @@ public class ProductOperationServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Description courte";
     }// </editor-fold>
 
 }

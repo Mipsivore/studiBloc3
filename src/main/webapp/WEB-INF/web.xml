@@ -7,7 +7,7 @@
     <servlet-mapping>
         <servlet-name>about</servlet-name>
         <url-pattern>/about</url-pattern>
-        <url-pattern>/durgeshkumar</url-pattern>
+        <url-pattern>/GUYOT Arnaud</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>register</servlet-name>

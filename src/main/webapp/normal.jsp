@@ -7,6 +7,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>This is normal user panel</h1>
+        <h1>Votre compte utilisateur ...</h1>
     </body>
 </html>

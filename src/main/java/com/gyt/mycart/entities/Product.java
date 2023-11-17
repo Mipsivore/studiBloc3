@@ -17,8 +17,8 @@ public class Product {
     @Column(length = 3000)
     private String pDesc;
     private String pPhoto;
-    private int pPrice;
-    private int pDiscount;
+    private float pPrice;
+    private float pDiscount;
     private int pQuantity;
     @ManyToOne
     private Category category;
@@ -26,7 +26,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String pName, String pDesc, String pPhoto, int pPrice, int pDiscount, int pQuantity, Category category) {
+    public Product(String pName, String pDesc, String pPhoto, float pPrice, float pDiscount, int pQuantity, Category category) {
         this.pName = pName;
         this.pDesc = pDesc;
         this.pPhoto = pPhoto;
@@ -68,19 +68,19 @@ public class Product {
         this.pPhoto = pPhoto;
     }
 
-    public int getpPrice() {
+    public float getpPrice() {
         return pPrice;
     }
 
-    public void setpPrice(int pPrice) {
+    public void setpPrice(float pPrice) {
         this.pPrice = pPrice;
     }
 
-    public int getpDiscount() {
+    public float getpDiscount() {
         return pDiscount;
     }
 
-    public void setpDiscount(int pDiscount) {
+    public void setpDiscount(float pDiscount) {
         this.pDiscount = pDiscount;
     }
 
@@ -106,8 +106,8 @@ public class Product {
     }
 
     //calculate price after discount
-    public int getPriceAfterApplyingDiscount() {
-        int d = (int) ((this.getpDiscount() / 100.0) * this.getpPrice());
+    public float getPriceAfterApplyingDiscount() {
+        float d = (float) ((this.getpDiscount() / 100.0) * this.getpPrice());
         return this.getpPrice() - d;
     }
 

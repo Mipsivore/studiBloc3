@@ -2,26 +2,26 @@ function add_to_cart(pid, pname, price)
 {
 
     let cart = localStorage.getItem("cart");
-    if (cart == null)
+    if (cart === null)
     {
         //no cart yet  
         let products = [];
-        let product = {productId: pid, productName: pname, productQuantity: 1, productPrice: price}
+        let product = {productId: pid, productName: pname, productQuantity: 1, productPrice: price};
         products.push(product);
         localStorage.setItem("cart", JSON.stringify(products));
 //        console.log("Product is added for the first time")
-        showToast("Item is added to cart")
+        showToast("Article ajouté à votre selection");
     } else
     {
         //cart is already present
         let pcart = JSON.parse(cart);
 
-        let oldProduct = pcart.find((item) => item.productId == pid)
-        console.log(oldProduct)
+        let oldProduct = pcart.find((item) => item.productId === pid);
+        console.log(oldProduct);
         if (oldProduct)
         {
             //we have to increase the quantity
-            oldProduct.productQuantity = oldProduct.productQuantity + 1
+            oldProduct.productQuantity = oldProduct.productQuantity + 1;
             pcart.map((item) => {
 
                 if (item.productId === oldProduct.productId)
@@ -29,19 +29,20 @@ function add_to_cart(pid, pname, price)
                     item.productQuantity = oldProduct.productQuantity;
                 }
 
-            })
-            localStorage.setItem("cart", JSON.stringify(pcart));
-            console.log("Product quantity is increased")
-            showToast(oldProduct.productName + " quantity is increased , Quantity = " + oldProduct.productQuantity)
+            },
+            
+            localStorage.setItem("cart", JSON.stringify(pcart)),
+            console.log("La quantité de ce produit a été augmentée"),
+            showToast(oldProduct.productName + " ajout, Quantité = " + oldProduct.productQuantity));
 
         } else
         {
             //we have add the product
-            let product = {productId: pid, productName: pname, productQuantity: 1, productPrice: price}
-            pcart.push(product)
+            let product = {productId: pid, productName: pname, productQuantity: 1, productPrice: price};
+            pcart.push(product);
             localStorage.setItem("cart", JSON.stringify(pcart));
-            console.log("Product is added")
-            showToast("Product is added to cart")
+            console.log("Le produit est ajouté");
+            showToast("Le produit a été ajouté à votre selection");
         }
 
 
@@ -58,27 +59,27 @@ function updateCart()
 {
     let cartString = localStorage.getItem("cart");
     let cart = JSON.parse(cartString);
-    if (cart == null || cart.length == 0)
+    if (cart === null || cart.length === 0)
     {
-        console.log("Cart is empty !!")
+        console.log("Votre selection est vide !!");
         $(".cart-items").html("( 0 )");
-        $(".cart-body").html("<h3>Cart does not have any items </h3>");
-        $(".checkout-btn").attr('disabled', true)
+        $(".cart-body").html("<h3>Votre selection ne contient aucun produit ! </h3>");
+        $(".checkout-btn").attr('disabled', true);
     } else
     {
 
 
         //there is some in cart to show
-        console.log(cart)
+        console.log(cart);
         $(".cart-items").html(`( ${cart.length} )`);
         let table = `
             <table class='table'>
             <thead class='thread-light'>
                 <tr>
-                <th>Item Name </th>
-                <th>Price </th>
-                <th>Quantity </th>
-                <th>Total Price </th>
+                <th>Nom du produit </th>
+                <th>Prix</th>
+                <th>Quantité </th>
+                <th>Prix total </th>
                 <th>Action</th>
                 
         
@@ -101,23 +102,23 @@ function updateCart()
                         <td> ${item.productPrice} </td>
                         <td> ${item.productQuantity} </td>
                         <td> ${item.productQuantity * item.productPrice} </td>
-                        <td> <button onclick='deleteItemFromCart(${item.productId})' class='btn btn-danger btn-sm'>Remove</button> </td>    
+                        <td> <button onclick='deleteItemFromCart(${item.productId})' class='btn btn-danger btn-sm'>Supprimer</button> </td>    
                      </tr>
-                 `
+                 `;
 
             totalPrice += item.productPrice * item.productQuantity;
 
-        })
+        });
 
 
 
 
         table = table + `
-            <tr><td colspan='5' class='text-right font-weight-bold m-5'> Total Price : ${totalPrice} </td></tr>
-         </table>`
+            <tr><td colspan='5' class='text-right font-weight-bold m-5'> Prix total : ${totalPrice} </td></tr>
+         </table>`;
         $(".cart-body").html(table);
-        $(".checkout-btn").attr('disabled', false)
-        console.log("removed")
+        $(".checkout-btn").attr('disabled', false);
+        console.log("removed");
 
     }
 
@@ -129,21 +130,21 @@ function deleteItemFromCart(pid)
 {
     let cart = JSON.parse(localStorage.getItem('cart'));
 
-    let newcart = cart.filter((item) => item.productId != pid)
+    let newcart = cart.filter((item) => item.productId !== pid);
 
-    localStorage.setItem('cart', JSON.stringify(newcart))
+    localStorage.setItem('cart', JSON.stringify(newcart));
 
     updateCart();
 
-    showToast("Item is removed from cart ")
+    showToast("Le produit a été retiré de votre selection ");
 
 }
 
 
 $(document).ready(function () {
 
-    updateCart()
-})
+    updateCart();
+});
 
 
 function showToast(content) {
@@ -157,6 +158,6 @@ function showToast(content) {
 
 function goToCheckout() {
 
-    window.location = "checkout.jsp"
+    window.location = "checkout.jsp";
 
 }

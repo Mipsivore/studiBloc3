@@ -19,7 +19,7 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            /* TODO output page here. You may use following sample code. */
             
             try {
                 
@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
 
                 // validations
                 if (userName.isEmpty()) {
-                    out.println("Name is blank ");
+                    out.println("Votre nom est vide ! ");
                     return;
                 }
                 //creating user object to store data
@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
                 tx.commit();
                 hibernateSession.close();                
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Registration Successful !! User id is " + userId);                
+                httpSession.setAttribute("message", "Inscription réussie !! Votre identifiant est " + userId);                
                 response.sendRedirect("register.jsp");
                 return;
                 
@@ -96,7 +96,7 @@ public class RegisterServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Description courte";
     }// </editor-fold>
 
 }

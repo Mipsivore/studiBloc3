@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark  custom-bg">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">MyCart</a>
+        <a class="navbar-brand" href="index.jsp">Ma selection</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,7 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.jsp">Accueil <span class="sr-only">(current)</span></a>
                 </li>
 
 
@@ -26,7 +26,7 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">A propos</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>

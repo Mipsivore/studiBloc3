@@ -30,11 +30,11 @@ public class LoginServlet extends HttpServlet {
             //System.out.println(user);
             HttpSession httpSession = request.getSession();
             if (user == null) {
-                httpSession.setAttribute("message", "Invalid Details !! Try with another one");
+                httpSession.setAttribute("message", "Saisies invalides !! Veuillez corriger");
                 response.sendRedirect("login.jsp");
                 return;
             } else {
-                out.println("<h1>Welcome " + user.getUserName() + " </h1>");
+                out.println("<h1>Bienvenue " + user.getUserName() + " </h1>");
 
                 //login
                 httpSession.setAttribute("current-user", user);
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("normal.jsp");
                 }else
                 {
-                    out.println("We have not identified user type");
+                    out.println("Nous ne parvenons pas a identifier le type d'utilisateur");
                 }
 
             }
@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Description courte";
     }// </editor-fold>
 
 }
