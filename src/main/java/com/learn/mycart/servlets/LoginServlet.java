@@ -1,7 +1,7 @@
 package com.learn.mycart.servlets;
 
 import com.learn.mycart.dao.UserDao;
-import com.learn.mycart.entities.User;
+import com.learn.mycart.entities.UserP;
 import com.learn.mycart.helper.FactoryProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
             //validations
             //authenticating user
             UserDao userDao = new UserDao(FactoryProvider.getFactory());
-            User user = userDao.getUserByEmailAndPassword(email, password);
+            UserP user = userDao.getUserByEmailAndPassword(email, password);
 
             //System.out.println(user);
             HttpSession httpSession = request.getSession();

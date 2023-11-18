@@ -2,10 +2,10 @@
 <%@page import="java.util.List"%>
 <%@page import="com.learn.mycart.helper.FactoryProvider"%>
 <%@page import="com.learn.mycart.dao.CategoryDao"%>
-<%@page import="com.learn.mycart.entities.User"%>
+<%@page import="com.learn.mycart.entities.UserP"%>
 <%
 
-    User user = (User) session.getAttribute("current-user");
+    UserP user = (UserP) session.getAttribute("current-user");
     if (user == null) {
 
         session.setAttribute("message", "You are not logged in !! Login first");

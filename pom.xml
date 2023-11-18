@@ -46,7 +46,14 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat8-maven-plugin -->     
         
-        
+        <!-- Framework de test pour Java -->
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.1</version>
+                <scope>test</scope>
+        </dependency>
         
     </dependencies>
 

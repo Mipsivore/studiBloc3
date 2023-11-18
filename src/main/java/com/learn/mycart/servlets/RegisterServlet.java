@@ -1,6 +1,6 @@
 package com.learn.mycart.servlets;
 
-import com.learn.mycart.entities.User;
+import com.learn.mycart.entities.UserP;
 import com.learn.mycart.helper.FactoryProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
                     return;
                 }
                 //creating user object to store data
-                User user = new User(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress, "normal");
+                UserP user = new UserP(userName, userEmail, userPassword, userPhone, "default.jpg", userAddress, "normal");
                 Session hibernateSession = FactoryProvider.getFactory().openSession();
                 Transaction tx = hibernateSession.beginTransaction();                
                 int userId = (int) hibernateSession.save(user);                

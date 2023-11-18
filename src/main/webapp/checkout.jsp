@@ -1,6 +1,7 @@
+<%@page import="com.learn.mycart.entities.UserP"%>
 <%
 
-    User user = (User) session.getAttribute("current-user");
+    UserP user = (UserP) session.getAttribute("current-user");
     if (user == null) {
 
         session.setAttribute("message", "You are not logged in !! Login first to access checkout page");

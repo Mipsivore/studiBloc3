@@ -1,7 +1,7 @@
 
-<%@page import="com.learn.mycart.entities.User"%>
+<%@page import="com.learn.mycart.entities.UserP"%>
 <%
-    User user1 = (User) session.getAttribute("current-user");
+    UserP user1 = (UserP) session.getAttribute("current-user");
 
 %>
 
