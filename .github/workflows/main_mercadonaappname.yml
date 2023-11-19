@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - MercadonaAppName
+name: Build and deploy WAR app to Azure Web App - mercadonaappname
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: '11'
 
       - name: Build with Maven
         run: mvn clean install
@@ -47,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'MercadonaAppName'
+          app-name: 'mercadonaappname'
           slot-name: 'Production'
           package: '*.war'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_417A5E1246024AB1BFE5DF0FD3C9A0DF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F244897F37BA49B0B4951ACAA3F7AE2A }}
