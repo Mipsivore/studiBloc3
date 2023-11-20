@@ -4,17 +4,16 @@
 
 <hibernate-configuration>
     <session-factory>
-<<<<<<< Updated upstream
         <!-- Database connection settings -->       
         <property name="connection.driver_class">org.postgresql.Driver</property> 
            
        <!-- <property name="connection.url">jdbc:postgresql://localhost:5432/mycart?serverTimezone=Europe/Paris [mycart on POSTGRES]</property>   -->
        
         <!-- <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com/mycart</property> -->
-        <property name="connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/{your_database}?user=mipsivore@mercadona-db&password=Mandragore46$&sslmode=require</property>
+        <property name="connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/mycart?user=arnaud&password=kavakuna&sslmode=require</property>
   
-        <property name="connection.username">mipsivore</property>        
-        <property name="connection.password">Mandragore46$</property>
+        <property name="connection.username">arnaud</property>        
+        <property name="connection.password">kavakuna</property>
         
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">3</property>
@@ -27,7 +26,7 @@
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
         
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -35,32 +34,6 @@
         <mapping class="com.learn.mycart.entities.Category" />  
         <mapping class="com.learn.mycart.entities.Product" />  
             
-        
-    </session-factory>
-=======
-        <!-- Database connection properties -->
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/mycart?sslmode=require&user=aad_postgresql_75539%40mercadona-db</property>
-      <!--  <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">Mandragore46$</property>  -->
-
-        <!-- Other Hibernate properties -->
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-
-        <property name="connection_pool_size">5</property>
-
-        <!-- first time it is create and then onwards update -->
-        <property name="hbm2ddl.auto">update</property>
-
-        <!-- Mapping files or annotated classes --> 
-        <!-- Add your entity classes or mapping files here  for ex: entity used below -->
-        <mapping class="com.gyt.mycart.entities.UserP" />  
-        <mapping class="com.gyt.mycart.entities.Category" />  
-        <mapping class="com.gyt.mycart.entities.Product" />  
-
-     </session-factory>
->>>>>>> Stashed changes
-    
+        </session-factory>
+     
 </hibernate-configuration>
