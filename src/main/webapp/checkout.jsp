@@ -77,7 +77,9 @@
 
                                 <div class="container text-center">
                                     <button class="btn btn-outline-success">Imprimer votre sélection</button>
-                                    <button class="btn btn-outline-primary" data-dismiss="modal">Continuez la chasse aux promotions</button>
+                                    <a href="index.jsp">
+                                    <button class="btn btn-outline-primary">Continuez la chasse aux promotions</button>
+                                    </a>
                                 </div>
 
                             </form>    
