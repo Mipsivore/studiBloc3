@@ -215,7 +215,7 @@
 
 
                             <div class="form-group">
-                                <textarea style="height: 300px;" class="form-control" placeholder="Entez une déscription de la catégorie" name="catDescription" required></textarea>
+                                <textarea style="height: 300px;" class="form-control" placeholder="Entez une description de la catégorie" name="catDescription" required></textarea>
 
                             </div>
 
@@ -294,7 +294,7 @@
                             <!--product quantity-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Entz une quantité de ce produit" name="pQuantity" required />
+                                <input type="number" class="form-control" placeholder="Entrez une quantité de ce produit" name="pQuantity" required />
                             </div>
 
 

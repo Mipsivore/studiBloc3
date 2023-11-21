@@ -101,7 +101,7 @@ function updateCart()
                         <td> ${item.productPrice} </td>
                         <td> ${item.productQuantity} </td>
                         <td> ${item.productQuantity * item.productPrice} </td>
-                        <td> <button onclick='deleteItemFromCart(${item.productId})' class='btn btn-danger btn-sm'>Remove</button> </td>    
+                        <td> <button onclick='deleteItemFromCart(${item.productId})' class='btn btn-danger btn-sm'>Supprimer</button> </td>    
                      </tr>
                  `
 
@@ -113,7 +113,7 @@ function updateCart()
 
 
         table = table + `
-            <tr><td colspan='5' class='text-right font-weight-bold m-5'> Total Price : ${totalPrice} </td></tr>
+            <tr><td colspan='5' class='text-right font-weight-bold m-5'> Prix total : ${totalPrice} </td></tr>
          </table>`
         $(".cart-body").html(table);
         $(".checkout-btn").attr('disabled', false)

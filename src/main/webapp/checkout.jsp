@@ -55,12 +55,12 @@
                             <form action="#!">
                                 <div class="form-group">
                                     <label for="email">Adresse Email</label>
-                                    <input value="<%= user.getUserEmail()%>" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input value="<%= user.getUserEmail()%>" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
                                     <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre email avec d'autres entreprises</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Votre nom</label>
-                                    <input value="<%= user.getUserName()%>" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input value="<%= user.getUserName()%>" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Entrez votre nom">
                                 </div>
 
 
