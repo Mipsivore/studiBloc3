@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+    <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration SYSTEM 
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
@@ -9,7 +9,7 @@
            
        
         <!-- <JDBC connection chain -->
-        <property name="connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/mycart?user=arnaud@mercadona-db&amp;password=kavakuna&amp;sslmode=require</property>
+        <property name="connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/mycart?useUnicode=true&amp;characterEncoding=utf8&amp;user=arnaud@mercadona-db&amp;password=kavakuna&amp;sslmode=require</property>
         <property name="connection.username">arnaud</property>        
         <property name="connection.password">kavakuna</property>
         
