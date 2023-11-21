@@ -26,7 +26,8 @@
 }
 
 .discount-label{
-    font-size: 10px!important;
+    font-size: 12px!important;
+    color: black;
     font-style: italic!important;
     /*text-decoration: line-through!important;*/
 }
