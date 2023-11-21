@@ -56,11 +56,14 @@ public class ProductOperationServlet extends HttpServlet {
                 //work
                 String pName = request.getParameter("pName");
                 String pDesc = request.getParameter("pDesc");
-                int pPrice = Integer.parseInt(request.getParameter("pPrice"));
-                int pDiscount = Integer.parseInt(request.getParameter("pDiscount"));
+                float pPrice = Float.parseFloat(request.getParameter("pPrice"));
+                float pDiscount = Float.parseFloat(request.getParameter("pDiscount"));
                 int pQuantity = Integer.parseInt(request.getParameter("pQuantity"));
                 int catId = Integer.parseInt(request.getParameter("catId"));
+                
+                //get the value of the field containing the file name
                 Part part = request.getPart("pPic");
+                
 
                 Product p = new Product();
                 p.setpName(pName);
@@ -154,6 +157,11 @@ public class ProductOperationServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Servlet de maintenance";
-    }// </editor-fold>
+    }
+    
+ 
+// </editor-fold>
+    
+    
 
 }
