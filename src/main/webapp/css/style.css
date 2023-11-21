@@ -25,6 +25,12 @@
     border-color:#673ab7!important;
 }
 
+.price-discounted{
+    
+    font-weight: bold;
+    color:red;
+}
+
 .discount-label{
     font-size: 12px!important;
     color: black;
