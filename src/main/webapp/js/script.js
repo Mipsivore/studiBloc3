@@ -10,7 +10,7 @@ function add_to_cart(pid, pname, price)
         products.push(product);
         localStorage.setItem("cart", JSON.stringify(products));
 //        console.log("Product is added for the first time")
-        showToast("Item is added to cart")
+        showToast("Le produit est ajouté à votre sélection")
     } else
     {
         //cart is already present
@@ -31,7 +31,7 @@ function add_to_cart(pid, pname, price)
 
             })
             localStorage.setItem("cart", JSON.stringify(pcart));
-            console.log("Product quantity is increased")
+            console.log("La quantité de produit a été augmentée")
             showToast(oldProduct.productName + " quantity is increased , Quantity = " + oldProduct.productQuantity)
 
         } else
@@ -40,8 +40,8 @@ function add_to_cart(pid, pname, price)
             let product = {productId: pid, productName: pname, productQuantity: 1, productPrice: price}
             pcart.push(product)
             localStorage.setItem("cart", JSON.stringify(pcart));
-            console.log("Product is added")
-            showToast("Product is added to cart")
+            console.log("Le produit a été ajouté")
+            showToast("Le produit a été ajouté à votre sélection")
         }
 
 
@@ -60,9 +60,9 @@ function updateCart()
     let cart = JSON.parse(cartString);
     if (cart == null || cart.length == 0)
     {
-        console.log("Cart is empty !!")
+        console.log("Votre sélection est vide !!")
         $(".cart-items").html("( 0 )");
-        $(".cart-body").html("<h3>Cart does not have any items </h3>");
+        $(".cart-body").html("<h3>Votre selection ne contient aucun produit !</h3>");
         $(".checkout-btn").attr('disabled', true)
     } else
     {
@@ -75,10 +75,10 @@ function updateCart()
             <table class='table'>
             <thead class='thread-light'>
                 <tr>
-                <th>Item Name </th>
-                <th>Price </th>
-                <th>Quantity </th>
-                <th>Total Price </th>
+                <th>Nom des produits </th>
+                <th>Prix </th>
+                <th>Quantité </th>
+                <th>Prix total </th>
                 <th>Action</th>
                 
         
@@ -135,7 +135,7 @@ function deleteItemFromCart(pid)
 
     updateCart();
 
-    showToast("Item is removed from cart ")
+    showToast("Le produit a été supprimé de votre sélection ")
 
 }
 
