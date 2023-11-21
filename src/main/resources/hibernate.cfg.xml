@@ -7,25 +7,25 @@
         <!-- Database connection settings -->       
         <property name="connection.driver_class">org.postgresql.Driver</property> 
            
-       <!-- <property name="connection.url">jdbc:postgresql://localhost:5432/mycart?serverTimezone=Europe/Paris [mycart on POSTGRES]</property>   -->
        
-        <!-- <property name="connection.url">jdbc:postgresql://postgre-mercadona.postgres.database.azure.com/mycart</property> -->
+        <!-- <JDBC connection chain -->
         <property name="connection.url">jdbc:postgresql://mercadona-db.postgres.database.azure.com:5432/mycart?user=arnaud@mercadona-db&amp;password=kavakuna&amp;sslmode=require</property>
-  
         <property name="connection.username">arnaud</property>        
         <property name="connection.password">kavakuna</property>
         
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">3</property>
+        
         <!-- SQL dialect -->       
         <property name="dialect">org.hibernate.dialect.PostgreSQL92Dialect</property>
+        
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>
         
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
         
-        <!-- Drop and re-create the database schema on startup -->
+        <!-- Update the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
         
         <!-- Echo all executed SQL to stdout -->

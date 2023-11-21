@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>MyCart - Home </title>
+        <title>Mercadona Accueil </title>
         <%@include file="components/common_css_js.jsp" %>
 
     </head>
@@ -53,7 +53,7 @@
                     <div class="list-group mt-4">
 
                         <a href="index.jsp?category=all" class="list-group-item list-group-item-action active">
-                            All Products
+                            Tous les produits
                         </a>
 
 
@@ -117,7 +117,7 @@
                                     </div>
 
                                     <div class="card-footer text-center">
-                                        <button class="btn custom-bg text-white" onclick="add_to_cart(<%= p.getpId()%>, '<%= p.getpName()%>',<%= p.getPriceAfterApplyingDiscount()%>)">Add to Cart</button>
+                                        <button class="btn custom-bg text-white" onclick="add_to_cart(<%= p.getpId()%>, '<%= p.getpName()%>',<%= p.getPriceAfterApplyingDiscount()%>)">Ajout à la sélection</button>
                                         <button class="btn  btn-outline-success ">  &#8377; <%= p.getPriceAfterApplyingDiscount()%>/-  <span class="text-secondary discount-label">  &#8377; <%= p.getpPrice()%> , <%= p.getpDiscount()%>% off </span>  </button>
 
                                     </div>
@@ -134,7 +134,7 @@
                                 <%}
 
                                     if (list.size() == 0) {
-                                        out.println("<h3>No item in this category</h3>");
+                                        out.println("<h3>Aucun produits dans cette catégorie</h3>");
                                     }
 
 

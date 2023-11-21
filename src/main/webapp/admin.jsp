@@ -8,7 +8,7 @@
     UserP user = (UserP) session.getAttribute("current-user");
     if (user == null) {
 
-        session.setAttribute("message", "You are not logged in !! Login first");
+        session.setAttribute("message", "Vous n'êtes pas connecté, veuillez vous connecter !");
         response.sendRedirect("login.jsp");
         return;
 
@@ -16,7 +16,7 @@
 
         if (user.getUserType().equals("normal")) {
 
-            session.setAttribute("message", "You are not admin ! Do not access this page");
+            session.setAttribute("message", "Vous n'êtes pas admin, n'accéder pas à cette page !");
             response.sendRedirect("login.jsp");
             return;
 
@@ -34,7 +34,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Panel</title>
+        <title>Panneau d'administration</title>
         <%@include file="components/common_css_js.jsp" %>
 
 
@@ -65,8 +65,8 @@
                                 <img style="max-width: 125px;" class="img-fluid rounded-circle" src="img/seo-and-web.png" alt="user_icon">
 
                             </div> 
-                            <h1>2342</h1>
-                            <h1 class="text-uppercase text-muted">Users</h1>
+                            <h1>342</h1>
+                            <h1 class="text-uppercase text-muted">Visiteurs</h1>
 
                         </div>
 
@@ -90,8 +90,8 @@
 
                             </div> 
 
-                            <h1>23432</h1>
-                            <h1 class="text-uppercase text-muted">Categories</h1>
+                            <h1>12</h1>
+                            <h1 class="text-uppercase text-muted">Catégories</h1>
 
                         </div>
 
@@ -114,8 +114,8 @@
 
                             </div> 
 
-                            <h1>234</h1>
-                            <h1 class="text-uppercase text-muted">Products</h1>
+                            <h1>100</h1>
+                            <h1 class="text-uppercase text-muted">Produits</h1>
 
                         </div>
 
@@ -147,8 +147,8 @@
 
                             </div> 
 
-                            <p class="mt-2">Click here to add new category</p>
-                            <h1 class="text-uppercase text-muted">Add Category</h1>
+                            <p class="mt-2">Cliquez pour ajouter une catégorie</p>
+                            <h1 class="text-uppercase text-muted">Ajout catégorie</h1>
 
                         </div>
 
@@ -168,8 +168,8 @@
 
                             </div> 
 
-                            <p class="mt-2">Click here to add new Product</p>
-                            <h1 class="text-uppercase text-muted">Add Product</h1>
+                            <p class="mt-2">Cliquez pour ajouter un produit</p>
+                            <h1 class="text-uppercase text-muted">Ajout produit</h1>
 
                         </div>
 
@@ -197,7 +197,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header custom-bg text-white">
-                        <h5 class="modal-title" id="exampleModalLabel">Fill category details</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Description de la catégorie</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -209,20 +209,20 @@
 
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="catTitle" placeholder="Enter category title" required />
+                                <input type="text" class="form-control" name="catTitle" placeholder="Entrez le nom de la catégorie" required />
 
                             </div>
 
 
                             <div class="form-group">
-                                <textarea style="height: 300px;" class="form-control" placeholder="Enter category description" name="catDescription" required></textarea>
+                                <textarea style="height: 300px;" class="form-control" placeholder="Entez une déscription de la catégorie" name="catDescription" required></textarea>
 
                             </div>
 
-                            <div class="cotnainer text-center">
+                            <div class="container text-center">
 
-                                <button class="btn btn-outline-success">Add Category</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button class="btn btn-outline-success">Ajout catégorie</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
                             </div>
 
@@ -253,7 +253,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Product details</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Description du produit</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -268,33 +268,33 @@
                             <!--product title-->
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Enter title of product" name="pName" required />
+                                <input type="text" class="form-control" placeholder="Entez le nom du produit" name="pName" required />
                             </div>
 
                             <!--product description-->
 
                             <div class="form-group">
-                                <textarea style="height: 150px;" class="form-control" placeholder="Enter product description" name="pDesc"></textarea>
+                                <textarea style="height: 150px;" class="form-control" placeholder="Entez une description pour le produit" name="pDesc"></textarea>
 
                             </div>
 
                             <!--product price-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Enter price of product" name="pPrice" required />
+                                <input type="number" class="form-control" placeholder="Entez le prix du produit" name="pPrice" required />
                             </div>
 
                             <!--product discount-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Enter product discount" name="pDiscount" required />
+                                <input type="number" class="form-control" placeholder="Entez un pourcentage de réduction" name="pDiscount" required />
                             </div>
 
 
                             <!--product quantity-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Enter product Quantity" name="pQuantity" required />
+                                <input type="number" class="form-control" placeholder="Entz une quantité de ce produit" name="pQuantity" required />
                             </div>
 
 
@@ -321,7 +321,7 @@
                             <!--product file-->
 
                             <div class="form-group">
-                                <label for="pPic">Select Picture of product</label>  
+                                <label for="pPic">Selectionnez une image pour le produit</label>  
                                 <br>
                                 <input type="file" id="pPic" name="pPic" required />
 
@@ -331,7 +331,7 @@
                             <!--submit button-->
                             <div class="container text-center">
 
-                                <button class="btn btn-outline-success">Add product</button>
+                                <button class="btn btn-outline-success">Ajout produit</button>
 
                             </div>
 
@@ -341,7 +341,7 @@
                         <!--end form-->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.learn.mycart.servlets;
 
 import com.learn.mycart.dao.CategoryDao;
@@ -52,7 +47,7 @@ public class ProductOperationServlet extends HttpServlet {
                 int catId = categoryDao.saveCategory(category);
 //                out.println("Category Saved");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Category added successfully : " + catId);
+                httpSession.setAttribute("message", "Catégorie ajoutée avec succès : " + catId);
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -113,7 +108,7 @@ public class ProductOperationServlet extends HttpServlet {
 
                 out.println("Product save sucess...");
                 HttpSession httpSession = request.getSession();
-                httpSession.setAttribute("message", "Product is added successfully..");
+                httpSession.setAttribute("message", "Produit ajouté avec succès..");
                 response.sendRedirect("admin.jsp");
                 return;
 
@@ -158,7 +153,7 @@ public class ProductOperationServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Servlet de maintenance";
     }// </editor-fold>
 
 }

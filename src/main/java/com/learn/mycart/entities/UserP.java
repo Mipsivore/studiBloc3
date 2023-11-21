@@ -53,42 +53,41 @@ public class UserP {
     }
     
     /**
-     * Contrôle l'email fournit sous forme de chaine, 
-     * comme ayant un format conforme.
-     * @param emailAsString email proposé en format chaîne.
-     * @return True email au format valide, False email dont le format 
-     * est invalide.
+     * Controls the email provided in the form of a chain, 
+     * as having a compliant format.
+     * @param emailAsString email offered in string format.
+     * @return True --> email in valid format, False --> email in invalid format.
      */
     public boolean checkValidEmail(String emailAsString) {
-        // Expression régulière de test de mail conforme 
-        // (crée avec le site https://regex101.com/)
-        // Idéalement il faut suivre cette préconnisation : RFC822
+        // Compliant email test regular expression
+        // (created with the site https://regex101.com/)
+        // Ideally you should follow this recommendation : RFC822
         
-        // NB : L'expression régulière ci-dessous n'est pas parfaite et validera 
-        // comme correct cette email : nom.@gmail.com
+        // Note : The regular expression below is not perfect and will validate
+        // as correct this email : nom.@gmail.com
         
-        // Le mail doit débuter avec une chaine composée de caractère 
-        // de l'alphabet en majuscule/minuscule, 
-        // du caractère souligné "_" 
-        // et se finissant pas un caractère point "."
-        // Présent au moins une fois.
+        // The email must begin with a string composed of characters
+        // the alphabet in upper/lower case,
+         // of the underlined character "_"
+         // and ending with a period character "."
+         // Present at least once.
         
-        // suivi du caractère @ (présence obligatoire)
+         // followed by the @ character (obligatory presence)
         
-        // suivi d'un groupe d'une chaine composée de caractères 
-        // de l'alphabet en majuscule/minuscule, 
-        // du caractère souligné "_" et se finissant pas un caractère point "."
-        // Présent au moins une fois.
+         // followed by a group of a string composed of characters
+         // the alphabet in upper/lower case,
+         // of the underscore character "_" and ending with a period character "."
+         // Present at least once.
         
-        // se finissant d'un groupe d'une chaine composée de caractères 
-        // de l'alphabet en majuscule/minuscule 
-        // du caractère souligné "_" 
-        // Avec une longueur de 2 au moins à 4 caratères au plus.
+         // ending with a group of a string composed of characters
+         // uppercase/lowercase alphabet
+         // of the underlined character "_"
+         // With a length of at least 2 to 4 characters at most.
         String mailpattern = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        // Compilation
+        // Compiling the pattern
         Pattern p = Pattern.compile(mailpattern);
         
-        // Analyse de correspondance
+        // Correspondence Analysis
         Matcher m = p.matcher(emailAsString);
         return m.find();
     }

@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>New User</title>
+        <title>Nouvel utilisateur</title>
 
         <%@include file="components/common_css_js.jsp" %>
     </head>
@@ -22,40 +22,40 @@
                             </div>
 
 
-                            <h3 class="text-center my-3">Sign up here !!</h3>
+                            <h3 class="text-center my-3">Création de compte</h3>
 
                             <form action="RegisterServlet" method="post">
 
                                 <div class="form-group">
-                                    <label for="name">User Name</label>
-                                    <input name="user_name" type="text" class="form-control" id="name" placeholder="Enter here" aria-describedby="emailHelp">
+                                    <label for="name">Nom d'utilisateur</label>
+                                    <input name="user_name" type="text" class="form-control" id="name" placeholder="Votre nom" aria-describedby="emailHelp">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email">User Email</label>
-                                    <input name="user_email" type="email" class="form-control" id="email" placeholder="Enter here" aria-describedby="emailHelp">
+                                    <label for="email">Email utilisateur</label>
+                                    <input name="user_email" type="email" class="form-control" id="email" placeholder="Votre email" aria-describedby="emailHelp">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">User password</label>
-                                    <input name="user_password" type="password" class="form-control" id="password" placeholder="Enter here" aria-describedby="emailHelp">
+                                    <label for="password">Mot de passe utilisateur</label>
+                                    <input name="user_password" type="password" class="form-control" id="password" placeholder="Votre mot de passe" aria-describedby="emailHelp">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone">User phone</label>
-                                    <input name="user_phone" type="number" class="form-control" id="phone" placeholder="Enter here" aria-describedby="emailHelp">
+                                    <label for="phone">Téléphone utilisateur</label>
+                                    <input name="user_phone" type="number" class="form-control" id="phone" placeholder="Votre téléphone" aria-describedby="emailHelp">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone">User Address</label>
-                                    <textarea name="user_address" style="height: 200px;" class="form-control" placeholder="Enter your address"></textarea>
+                                    <label for="adress">Adresse utilisateur</label>
+                                    <textarea name="user_address" style="height: 200px;" class="form-control" placeholder="Votre adresse"></textarea>
 
 
                                 </div>
 
                                 <div class="container text-center"> 
-                                    <button class="btn btn-outline-success">Register</button>
-                                    <button class="btn btn-outline-warning">Reset</button>
+                                    <button class="btn btn-outline-success">Enregistrer</button>
+                                    <button class="btn btn-outline-warning">Effacer</button>
 
                                 </div>
 

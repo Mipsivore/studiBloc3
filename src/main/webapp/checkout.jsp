@@ -4,7 +4,7 @@
     UserP user = (UserP) session.getAttribute("current-user");
     if (user == null) {
 
-        session.setAttribute("message", "You are not logged in !! Login first to access checkout page");
+        session.setAttribute("message", "Vous n'êtes pas connecté ! Veuillez vous identifier pour accéder à votre sélection");
         response.sendRedirect("login.jsp");
         return;
 
@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Checkout</title>
+        <title>Votre sélection</title>
         <%@include file="components/common_css_js.jsp" %>
 
     </head>
@@ -36,7 +36,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h3 class="text-center mb-5">Your selected items</h3>
+                            <h3 class="text-center mb-5">Votre sélection de produits</h3>
 
                             <div class="cart-body">
 
@@ -51,33 +51,33 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h3 class="text-center mb-5">Your details for order</h3>
+                            <h3 class="text-center mb-5">Vos informations de commande</h3>
                             <form action="#!">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input value="<%= user.getUserEmail()%>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <label for="email">Adresse Email</label>
+                                    <input value="<%= user.getUserEmail()%>" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">Nous ne partagerons pas votre email avec d'autres entreprises</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">Your name</label>
+                                    <label for="name">Votre nom</label>
                                     <input value="<%= user.getUserName()%>" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="name">Your contact</label>
-                                    <input value="<%= user.getUserPhone() %>" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter contact number">
+                                    <label for="phone">Votre téléphone</label>
+                                    <input value="<%= user.getUserPhone() %>" type="text" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Votre téléphone">
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1" >Your shipping address</label>
-                                    <textarea value="<%= user.getUserAddress()%>" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter your address" rows="3"></textarea>
+                                    <label for="adress" >Votre adresse de livraison</label>
+                                    <textarea value="<%= user.getUserAddress()%>" class="form-control" id="adress" placeholder="Votre adresse" rows="3"></textarea>
                                 </div>
 
                                 <div class="container text-center">
-                                    <button class="btn btn-outline-success">Order Now</button>
-                                    <button class="btn btn-outline-primary">Continue Shopping</button>
+                                    <button class="btn btn-outline-success">Imprimer votre sélection</button>
+                                    <button class="btn btn-outline-primary">Continuez la chasse aux promotions</button>
                                 </div>
 
                             </form>    
