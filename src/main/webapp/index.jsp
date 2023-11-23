@@ -101,7 +101,7 @@
                                 <div class="card product-card">
 
                                     <div class="container text-center">
-                                        <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 200px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
+                                        <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 190px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
 
                                     </div>
 
@@ -119,8 +119,8 @@
                                     </div>
 
                                     <div class="card-footer text-center">
-                                        <button class="btn custom-bg text-white" onclick="add_to_cart(`<%= p.getpId()%>`, `<%=p.getpName()%>`, `<%= p.getPriceAfterApplyingDiscount()%>`)">Ajout à la sélection</button>
-                                        <button class="btn  btn-outline-secondary price-discounted" style="color:<%= p.getpDiscount()==0.0 ? "black" : "red" %>"><%= p.getPriceAfterApplyingDiscount()%>  &#8364; /  <span class="text-secondary discount-label"> <s><%= p.getpPrice()%></s> &#8364;, (-<%= p.getpDiscount()%>%) </span>  </button>
+                                        <button class="btn custom-bg text-white" onclick="add_to_cart(`<%= p.getpId()%>`, `<%=p.getpName()%>`, `<%= p.getPriceAfterApplyingDiscount()%>`)">Ajout à la sélection</button><br>
+                                        <button class="btn  btn-outline-secondary price-discounted" style="color:<%= p.getpDiscount()==0.0 ? "black" : "red" %>"><%= p.getPriceAfterApplyingDiscount()%>  &#8364;  <span class="discount-label"><%= p.getpDiscount()!=0.0 ? "/ <s>"+p.getpPrice()+"</s> &#8364;, (-"+p.getpDiscount()+"%)" : ""%></span></button>
 
                                     </div>
 
