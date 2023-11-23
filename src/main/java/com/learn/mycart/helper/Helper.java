@@ -3,14 +3,15 @@ package com.learn.mycart.helper;
 
 
 public class Helper {
-    public static String get10Words(String desc)
+    public static String getSomeFirstWords(String desc)
     {
-        String[] strs = desc.split(" ");
+        final int nbWord =5;
+        String[] strs = desc.split("[\\s\t\\n]+");
         
-        if(strs.length>10)
+        if(strs.length>nbWord)
         {
             String res="";
-            for(int i=0;i<10;i++)
+            for(int i=0;i<nbWord;i++)
             {
                 res=res+strs[i]+" ";
             }
@@ -18,8 +19,12 @@ public class Helper {
         }else
         {
             
-            return (desc+"...");
+            return desc;
         }
         
+    }
+    public static boolean getDisplayTooltype(String desc){
+        String truncate = Helper.getSomeFirstWords(desc); 
+        return !truncate.equals(desc); 
     }
 }

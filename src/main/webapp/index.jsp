@@ -107,18 +107,20 @@
 
                                     <div class="card-body">
 
-                                        <h5 class="card-title"><%= p.getpName()%></h5>
+                                        <h6 class="card-title"><%= Helper.getSomeFirstWords(p.getpName())%></h6>
 
-                                        <p class="card-text">
-                                            <%= Helper.get10Words(p.getpDesc())%>
+                                        <p class="card-text" <%=Helper.getDisplayTooltype(p.getpDesc())? "title="+"'"+p.getpDesc().replaceAll("\'","`")+"'":""%>>
+                                       
+                                            <%= Helper.getSomeFirstWords(p.getpDesc())%>
 
                                         </p>
+                                        
 
                                     </div>
 
                                     <div class="card-footer text-center">
                                         <button class="btn custom-bg text-white" onclick="add_to_cart(`<%= p.getpId()%>`, `<%=p.getpName()%>`, `<%= p.getPriceAfterApplyingDiscount()%>`)">Ajout à la sélection</button>
-                                        <button class="btn  btn-outline-secondary price-discounted"><%= p.getPriceAfterApplyingDiscount()%>  &#8364; /  <span class="text-secondary discount-label"> <s><%= p.getpPrice()%></s> &#8364;, (-<%= p.getpDiscount()%>%) </span>  </button>
+                                        <button class="btn  btn-outline-secondary price-discounted" style="color:<%= p.getpDiscount()==0.0 ? "black" : "red" %>"><%= p.getPriceAfterApplyingDiscount()%>  &#8364; /  <span class="text-secondary discount-label"> <s><%= p.getpPrice()%></s> &#8364;, (-<%= p.getpDiscount()%>%) </span>  </button>
 
                                     </div>
 
