@@ -32,6 +32,11 @@
                         <a class="dropdown-item" href="#">3eme choix</a>
                     </div>
                 </li>
+                
+                <li class="nav-link" style="color:darkgray; width:520px; font-style:italic; vertical-align: middle;">
+                     <MARQUEE BEHAVIOR="scroll" DIRECTION="left" SCROLLAMOUNT="5">Pour tester la console d'administration, veuillez utiliser le compte dont le login est "admin@studi.fr" et le mot de passe "JAVA2023"             </MARQUEE>
+                </li>
+                
 
             </ul>
 
