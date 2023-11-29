@@ -1,7 +1,9 @@
 <%@page import="com.learn.mycart.entities.Category"%>
 <%@page import="java.util.List"%>
 <%@page import="com.learn.mycart.helper.FactoryProvider"%>
+<%@page import="com.learn.mycart.dao.ConnectionDao"%>
 <%@page import="com.learn.mycart.dao.CategoryDao"%>
+<%@page import="com.learn.mycart.dao.ProductDao"%>
 <%@page import="com.learn.mycart.entities.UserP"%>
 <%
 
@@ -23,7 +25,9 @@
         }
 
     }
-
+    CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+    ProductDao pdao = new ProductDao(FactoryProvider.getFactory());
+    ConnectionDao connectiondao = new ConnectionDao(FactoryProvider.getFactory());  
 
 %>
 
@@ -65,7 +69,7 @@
                                 <img style="max-width: 125px;" class="img-fluid rounded-circle" src="img/seo-and-web.png" alt="user_icon">
 
                             </div> 
-                            <h1>342</h1>
+                            <h1><%= connectiondao.getVisitorsNb() %></h1>
                             <h1 class="text-uppercase text-muted">Visiteurs</h1>
 
                         </div>
@@ -90,9 +94,8 @@
 
                             </div> 
 
-                            <h1>12</h1>
+                            <h1><%= cdao.getCategoryNb() %></h1>
                             <h1 class="text-uppercase text-muted">Catégories</h1>
-
                         </div>
 
                     </div>
@@ -114,7 +117,7 @@
 
                             </div> 
 
-                            <h1>100</h1>
+                            <h1><%= pdao.getProductsNb() %></h1>
                             <h1 class="text-uppercase text-muted">Produits</h1>
 
                         </div>
@@ -281,13 +284,13 @@
                             <!--product price-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Entez le prix du produit" name="pPrice" required />
+                                <input type="number" step="0.01" class"form-control" placeholder="Entez le prix du produit" name="pPrice" required />
                             </div>
 
                             <!--product discount-->
 
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Entez un pourcentage de réduction" name="pDiscount" required />
+                                <input type="number" step="0.01" class="form-control" placeholder="Entez un pourcentage de réduction" name="pDiscount" required />
                             </div>
 
 
@@ -300,7 +303,7 @@
 
                             <!--product category-->
 
-                            <%  CategoryDao cdao = new CategoryDao(FactoryProvider.getFactory());
+                            <%  
                                 List<Category> list = cdao.getCategories();
 
                             %>

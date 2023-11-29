@@ -26,4 +26,4 @@
     </div>
 </div>
 
-<div id="toast">Studi JAVA programming test - 2023</div>
+<div style="text-align: center" id="toast">Studi JAVA programming test - 2023</div>

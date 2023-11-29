@@ -1,12 +1,11 @@
-
 <%@page import="com.learn.mycart.entities.UserP"%>
 <%
     UserP user1 = (UserP) session.getAttribute("current-user");
 
 %>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark  custom-bg">
+<div class="custom-bg">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="index.jsp">Mercadona</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,3 +88,4 @@
 
     </div>
 </nav>
+</div>

@@ -9,14 +9,17 @@
 <%@page import="com.learn.mycart.helper.FactoryProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mercadona Accueil </title>
-        <%@include file="components/common_css_js.jsp" %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <title>Mercadona des promos toute l'année !</title>
+        <%@include file="components/common_css_js.jsp"%>
+                 
 
     </head>
-    <body>
+ 
+    <body class="mon-fond">
 
         <%@include  file="components/navbar.jsp" %>
 

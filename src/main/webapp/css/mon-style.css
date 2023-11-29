@@ -1,6 +1,30 @@
 .custom-bg{
-    background:#673ab7!important;
+    background-color: chocolate !important;
 }
+#mon-bg {
+    background-color: chocolate !important; 
+}
+.mon-fond {
+    
+    
+    /* Définit l'image de fond */
+    background-image: url('../img/joyeux-noel.jpg');
+    max-width: 100%;
+
+    /* Indique que l'image de fond doit s'étirer pour couvrir tout l'écran */
+    background-size: cover;
+
+    /* Assure que l'image de fond reste centrée */
+    background-position: center;
+
+    /* Fixe l'image de fond au viewport pour éviter le défilement */
+    background-attachment: fixed;
+
+    /* Autres styles du corps de la page */
+    margin: 0;
+    padding: 0;
+}
+
 
 .admin .card{
 
@@ -19,8 +43,8 @@
 
 .list-group-item.active{
 
-    background:#673ab7!important;
-    border-color:#673ab7!important;
+    background:#007bff !important;
+    border-color:#007bff !important;
 }
 
 .price-discounted{
@@ -30,9 +54,9 @@
 }
 
 .discount-label{
-    font-size: 12px!important;
+    font-size: 12px !important;
     color: black;
-    font-style: italic!important;
+    font-style: italic !important;
     /*text-decoration: line-through!important;*/
 }
 
@@ -89,3 +113,4 @@
         opacity: 0;
     }
 }
+

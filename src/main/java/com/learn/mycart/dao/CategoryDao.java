@@ -47,4 +47,12 @@ public class CategoryDao {
 
         return cat;
     }
+    //Get the number of categories
+    public int getCategoryNb() {
+        Session s = this.factory.openSession();
+        Query query = s.createQuery("from Category");
+        List<Category> list = query.list();
+        int Nb=list.size();
+        return Nb;
+    }
 }

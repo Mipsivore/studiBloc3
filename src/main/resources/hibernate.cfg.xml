@@ -32,7 +32,8 @@
         <property name="show_sql">true</property>
         <mapping class="com.learn.mycart.entities.UserP" />  
         <mapping class="com.learn.mycart.entities.Category" />  
-        <mapping class="com.learn.mycart.entities.Product" />  
+        <mapping class="com.learn.mycart.entities.Product" />
+        <mapping class="com.learn.mycart.entities.UserConnection" />
             
         </session-factory>
      

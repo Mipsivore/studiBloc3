@@ -39,7 +39,7 @@ public class ProductDao {
     //get all products
     public List<Product> getAllProducts() {
         Session s = this.factory.openSession();
-        Query query = s.createQuery("from Product");
+        Query query = s.createQuery("from Product ORDER BY pid");
         List<Product> list = query.list();
         return list;
     }
@@ -52,5 +52,13 @@ public class ProductDao {
         List<Product> list = query.list();
         return list;
     }
-
+    
+    //Get the number of products
+    public int getProductsNb() {
+        Session s = this.factory.openSession();
+        Query query = s.createQuery("from Product");
+        List<Product> list = query.list();
+        int Nb=list.size();
+        return Nb;
+    }
 }
