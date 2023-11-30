@@ -1,5 +1,3 @@
-
-
 <%@page import="com.learn.mycart.helper.Helper"%>
 <%@page import="com.learn.mycart.entities.Category"%>
 <%@page import="com.learn.mycart.dao.CategoryDao"%>
@@ -31,7 +29,7 @@
             <div class="row mt-3 mx-2">
 
                 <% String cat = request.getParameter("category");
-                    //out.println(cat);
+                    
 
                     ProductDao dao = new ProductDao(FactoryProvider.getFactory());
                     List<Product> list = null;
@@ -85,15 +83,12 @@
                 </div>
 
                 <!--show products-->
-            
 
-
-                    
 
                 <!--col:12-->
                 <div class="col-md-10">
 
-                    <!-- Utilisez flex-row-reverse pour afficher les cartes de la droite vers la gauche -->
+                    <!-- Useflex-row-reverse to display maps from right to left -->
                     <div class="card-columns flex-row-reverse">
 
                         <!--traversing products-->
@@ -101,7 +96,7 @@
 
                             <!--product card-->
                             <div class="card product-card col-md-12">
-                                <!-- Utilisez col-md-4 pour définir la largeur de chaque carte -->
+                                <!-- Use col-md-4 to set the width of each map -->
 
                                 <div class="container text-center">
                                     <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 190px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
@@ -127,16 +122,16 @@
                             </div>
 
                             <% if (list.indexOf(p) % 3 == 2) { %>
-                                <!-- Fermez la ligne après chaque groupe de trois cartes -->
+                                <!-- Close the line after each group of three cards -->
                                 </div>
-                                <!-- Commencez une nouvelle ligne pour le prochain groupe de trois cartes -->
+                                <!-- Start a new row for the next group of three cards -->
                                 <div class="card-columns flex-row-reverse">
                             <% } %>
 
                         <% } %>
 
                         <% if (list.size() % 3 != 0) { %>
-                            <!-- Fermez la ligne si le nombre total de cartes n'est pas un multiple de trois -->
+                            <!-- Close the line if the total number of cards is not a multiple of three -->
                             </div>
                         <% } %>
 

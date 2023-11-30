@@ -1,26 +1,24 @@
 .custom-bg{
     background-color:#007bff !important;
 }
-#mon-bg {
-    background-color:#007bff !important; 
-}
+
 .mon-fond {
     
     
-    /* Définit l'image de fond */
+    /* set background picture */
     background-image: url('../img/joyeux-noel.jpg');
     max-width: 100%;
 
-    /* Indique que l'image de fond doit s'étirer pour couvrir tout l'écran */
+    /* Specifies that the background image should stretch to cover the entire screen */
     background-size: cover;
 
-    /* Assure que l'image de fond reste centrée */
+    /* Ensures the background image remains centered */
     background-position: center;
 
-    /* Fixe l'image de fond au viewport pour éviter le défilement */
+    /* Fix the background image to the viewport to avoid scrolling */
     background-attachment: fixed;
 
-    /* Autres styles du corps de la page */
+    /* Other page body styles */
     margin: 0;
     padding: 0;
 }

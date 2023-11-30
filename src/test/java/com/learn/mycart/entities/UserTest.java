@@ -14,14 +14,14 @@ public class UserTest {
     public void emailTest() {
         UserP user = new UserP();
         
-        // Test d'email conforme
+        // Compliant Email Test
         String emailAsStringCorrect1 = "nom.@gmail.com";
-        // assertTrue : Affirme que la réponse doit être true
+        // assertTrue : Asserts that the answer must be true
         Assert.assertTrue(user.checkValidEmail(emailAsStringCorrect1));
 
-        // Test d'email non conforme
+        // Non-compliant email test
         String emailAsStringIncorrect1 = "@gmail.com";
-        // assertTrue : Affirme que la réponse doit être false
+        // assertTrue : Asserts that the answer must be false
         Assert.assertFalse(user.checkValidEmail(emailAsStringIncorrect1));
     }
     

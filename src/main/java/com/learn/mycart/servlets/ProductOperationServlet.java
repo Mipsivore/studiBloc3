@@ -92,7 +92,7 @@ public class ProductOperationServlet extends HttpServlet {
                 pdao.saveProduct(p);
 
                 //pic upload
-//                find out the path to upload photo
+                //find out the path to upload photo
                 String path = request.getRealPath("img") + File.separator + "products" + File.separator + part.getSubmittedFileName();
                 System.out.println(path);
 
@@ -103,12 +103,12 @@ public class ProductOperationServlet extends HttpServlet {
 
                     InputStream is = part.getInputStream();
 
-//                reading data
+                    //reading data
                     byte[] data = new byte[is.available()];
 
                     is.read(data);
 
-//                writing the data
+                    //writing the data
                     fos.write(data);
 
                     fos.close();

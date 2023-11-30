@@ -31,17 +31,17 @@ public class IpFilter implements Filter {
         // Cast de ServletRequest en HttpServletRequest
         HttpServletRequest httpRequest = (HttpServletRequest) request;
 
-        // Obtenir l'URI de la requête
+        // Get URI request
         String uri = httpRequest.getRequestURI();
 
-        // Vérifier si l'URI commence par "/css"
+        // Check if URI begin with "/css"
 	Pattern p = Pattern.compile(".*(css|img|js)");
-	// Bonne @Mac.
+	// Check the correspondence
 	Matcher m = p.matcher(uri);
 
-        // css|img|js alors on laisse passer.
+        // css|img|js let enter.
         if (m.find()) {
-            // Laisser passer la requête
+            // Let the request pass
             chain.doFilter(request, response);
             return;
         }
