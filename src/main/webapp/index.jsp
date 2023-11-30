@@ -107,7 +107,7 @@
                                     <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 190px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
                                 </div>
 
-                                <div class="card-body">
+                                <div class="card-body" style="padding: 0.5rem;">
                                     <h6 class="card-title"><%= Helper.getSomeFirstWords(p.getpName())%></h6>
                                     <p class="card-text" <%=Helper.getDisplayTooltype(p.getpDesc())? "title="+"'"+p.getpDesc().replaceAll("\'","`")+"'":""%>>
                                         <%= Helper.getSomeFirstWords(p.getpDesc())%>

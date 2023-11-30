@@ -22,13 +22,10 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Catégories
+                        Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Autre choix</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">3eme choix</a>
+                        <a class="dropdown-item" href="about.jsp">A propos...</a>
                     </div>
                 </li>
                 

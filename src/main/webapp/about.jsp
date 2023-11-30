@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,6 +17,12 @@
             <p>Ce site est un exercice de programmation d'application Java Web d'un site promotionnel pour la chaîne de magasins Mercadona</p>
         </div>
 
-        <%@include  file="components/common_modals.jsp" %>
+        <div class="container text-center">
+                                    
+                                    <a href="index.jsp">
+                                    <button class="btn btn-outline-primary">Continuez la chasse aux promotions</button>
+                                    </a>
+        </div>
+        
     </body>
 </html>
