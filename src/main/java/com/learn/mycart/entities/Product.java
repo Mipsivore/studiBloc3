@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+
 
 @Entity
 public class Product {
@@ -107,8 +111,20 @@ public class Product {
 
     //calculate price after discount
     public float getPriceAfterApplyingDiscount() {
+               
         float d = (float)((this.getpDiscount() / 100.0) * this.getpPrice());
-        return this.getpPrice() - d;
+        float finalPrice = this.getpPrice() - d;
+        
+        // Get round value as float number
+        BigDecimal roundedDecPrice;
+        roundedDecPrice = BigDecimal.valueOf(finalPrice).setScale(2, RoundingMode.HALF_UP);
+        
+        //convert BigDecimal to float
+        float roundedDiscount = roundedDecPrice.floatValue();
+        
+        return roundedDiscount;
+             
+        
     }
 
 }

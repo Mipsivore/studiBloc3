@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-   
-<filter>
-    <filter-name>Set Character Encoding</filter-name>
-    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
-    <init-param>
-        <param-name>encoding</param-name>
-        <param-value>UTF-8</param-value>
-    </init-param>
-    <init-param>
-        <param-name>ignore</param-name>
-        <param-value>false</param-value>
-    </init-param>
-</filter>
-<filter-mapping>
-    <filter-name>Set Character Encoding</filter-name>
-    <url-pattern>/*</url-pattern>
-</filter-mapping>
-
-<filter>
-    <filter-name>IpFilter</filter-name>
-    <filter-class>com.learn.mycart.filter.IpFilter</filter-class>
-</filter>
-
-<filter-mapping>
-    <filter-name>IpFilter</filter-name>
-    <url-pattern>/*</url-pattern> <!-- Class called when the user makes a request on this url -->
-</filter-mapping>
-
-
+    <filter>
+        <filter-name>Set Character Encoding</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ignore</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Set Character Encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>IpFilter</filter-name>
+        <filter-class>com.learn.mycart.filter.IpFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>IpFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <!-- Class called when the user makes a request on this url -->
+    </filter-mapping>
     <servlet>
         <servlet-name>about</servlet-name>
-        <jsp-file>/about.jsp</jsp-file>        
+        <jsp-file>/about.jsp</jsp-file>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>about</servlet-name>
         <url-pattern>/about</url-pattern>
         <url-pattern>/arnaud</url-pattern>
-     
     </servlet-mapping>
-
-
-
     <servlet>
         <servlet-name>register</servlet-name>
-        <jsp-file>/register.jsp</jsp-file>        
+        <jsp-file>/register.jsp</jsp-file>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>register</servlet-name>
         <url-pattern>/register</url-pattern>
-     
     </servlet-mapping>
-
-
-
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.learn.mycart.servlets.RegisterServlet</servlet-class>
@@ -93,8 +79,4 @@
             30
         </session-timeout>
     </session-config>
-    
-    
-    
-   
 </web-app>

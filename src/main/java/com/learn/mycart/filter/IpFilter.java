@@ -14,22 +14,41 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class IpFilter implements Filter {
-     // inite filter
+     // init filter
     public void init(FilterConfig filterConfig) throws ServletException {
        
     }
+    
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
+        
+        // Cast de ServletRequest en HttpServletRequest
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+
+        // Obtenir l'URI de la requête
+        String uri = httpRequest.getRequestURI();
+
+        // Vérifier si l'URI commence par "/css"
+	Pattern p = Pattern.compile(".*(css|img|js)");
+	// Bonne @Mac.
+	Matcher m = p.matcher(uri);
+
+        // css|img|js alors on laisse passer.
+        if (m.find()) {
+            // Laisser passer la requête
+            chain.doFilter(request, response);
+            return;
+        }
+        
         response.setContentType("text/html;charset=UTF-8");
         
-          // Convert ServletRequest object to HttpServletRequest object
-         HttpServletRequest httpRequest = (HttpServletRequest) request;
-         
-         // Convert ServletResponse object to HttpServletResponse object
+        // Convert ServletResponse object to HttpServletResponse object
         HttpServletResponse httpResponse = (HttpServletResponse) response;
          
         // Get the user's IP address from the request
@@ -39,7 +58,7 @@ public class IpFilter implements Filter {
         HttpSession session = httpRequest.getSession();
         Object userIpAdress=session.getAttribute("userIpAddress");
         
-        if (userIpAdress==null){
+        if (userIpAdress == null){
             //First user connection to store in attribute
             LocalDateTime CoDateTime=LocalDateTime.now();
             UserConnection uconnection = new UserConnection();

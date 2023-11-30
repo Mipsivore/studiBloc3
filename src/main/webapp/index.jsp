@@ -7,7 +7,11 @@
 <%@page import="java.util.List"%>
 <%@page import="com.learn.mycart.dao.ProductDao"%>
 <%@page import="com.learn.mycart.helper.FactoryProvider"%>
+<%@ page import="java.text.DecimalFormat" %>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -21,7 +25,7 @@
  
     <body class="mon-fond">
 
-        <%@include  file="components/navbar.jsp" %>
+        <%@include  file="components/navbar.jsp"%>
 
         <div class="container-fluid">
             <div class="row mt-3 mx-2">
@@ -81,82 +85,64 @@
                 </div>
 
                 <!--show products-->
+            
+
+
+                    
+
+                <!--col:12-->
                 <div class="col-md-10">
 
+                    <!-- Utilisez flex-row-reverse pour afficher les cartes de la droite vers la gauche -->
+                    <div class="card-columns flex-row-reverse">
 
-                    <!--row-->
-                    <div class="row mt-4">
+                        <!--traversing products-->
+                        <% for (Product p : list) { %>
 
-                        <!--col:12-->
-                        <div class="col-md-12">
+                            <!--product card-->
+                            <div class="card product-card col-md-12">
+                                <!-- Utilisez col-md-4 pour définir la largeur de chaque carte -->
 
-                            <div class="card-columns">
-
-                                <!--traversing products-->
-
-                                <%
-                                    for (Product p : list) {
-
-                                %>
-
-
-                                <!--product card-->
-                                <div class="card product-card">
-
-                                    <div class="container text-center">
-                                        <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 190px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
-
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h6 class="card-title"><%= Helper.getSomeFirstWords(p.getpName())%></h6>
-
-                                        <p class="card-text" <%=Helper.getDisplayTooltype(p.getpDesc())? "title="+"'"+p.getpDesc().replaceAll("\'","`")+"'":""%>>
-                                       
-                                            <%= Helper.getSomeFirstWords(p.getpDesc())%>
-
-                                        </p>
-                                        
-
-                                    </div>
-
-                                    <div class="card-footer text-center">
-                                        <button class="btn custom-bg text-white" onclick="add_to_cart(`<%= p.getpId()%>`, `<%=p.getpName()%>`, `<%= p.getPriceAfterApplyingDiscount()%>`)">Ajout à la sélection</button><br>
-                                        <button class="btn  btn-outline-secondary price-discounted" style="color:<%= p.getpDiscount()==0.0 ? "black" : "red" %>"><%= p.getPriceAfterApplyingDiscount()%>  &#8364;  <span class="discount-label"><%= p.getpDiscount()!=0.0 ? "/ <s>"+p.getpPrice()+"</s> &#8364;, (-"+p.getpDiscount()+"%)" : ""%></span></button>
-
-                                    </div>
-
-
-
+                                <div class="container text-center">
+                                    <img src="img/products/<%= p.getpPhoto()%>" style="max-height: 190px;max-width: 100%;width: auto; " class="card-img-top m-2" alt="...">
                                 </div>
 
+                                <div class="card-body">
+                                    <h6 class="card-title"><%= Helper.getSomeFirstWords(p.getpName())%></h6>
+                                    <p class="card-text" <%=Helper.getDisplayTooltype(p.getpDesc())? "title="+"'"+p.getpDesc().replaceAll("\'","`")+"'":""%>>
+                                        <%= Helper.getSomeFirstWords(p.getpDesc())%>
+                                    </p>
+                                </div>
 
+                                    <div class="text-center">
+                                        <!-- Set format with two decimal places -->
+                                        <%DecimalFormat decimalFormat = new DecimalFormat("0.00");%>
 
+                                        <button class="btn custom-bg text-white" onclick="add_to_cart(`<%= p.getpId()%>`,`<%=p.getpName()%>`,`<%= p.getPriceAfterApplyingDiscount()%>`)">Ajout à la sélection</button><br>
+                                        <button class="btn  btn-outline-secondary price-discounted" style="color:<%= p.getpDiscount()==0.0 ? "black" : "red" %>">
+                                            <%= decimalFormat.format(p.getPriceAfterApplyingDiscount())%>  &#8364;  
+                                            <span class="discount-label"><%= p.getpDiscount()!=0.0 ? "/ <s>"+p.getpPrice()+"</s> &#8364;, (-"+p.getpDiscount()+"%)" : ""%></span>
+                                        </button>
+                                    </div>
+                            </div>
 
+                            <% if (list.indexOf(p) % 3 == 2) { %>
+                                <!-- Fermez la ligne après chaque groupe de trois cartes -->
+                                </div>
+                                <!-- Commencez une nouvelle ligne pour le prochain groupe de trois cartes -->
+                                <div class="card-columns flex-row-reverse">
+                            <% } %>
 
+                        <% } %>
 
-                                <%}
-
-                                    if (list.size() == 0) {
-                                        out.println("<h3>Aucun produits dans cette catégorie</h3>");
-                                    }
-
-
-                                %>
-
-
-                            </div>                     
-
-
-
-                        </div>                   
+                        <% if (list.size() % 3 != 0) { %>
+                            <!-- Fermez la ligne si le nombre total de cartes n'est pas un multiple de trois -->
+                            </div>
+                        <% } %>
 
                     </div>
-
-
-
                 </div>
+
 
             </div>
         </div>

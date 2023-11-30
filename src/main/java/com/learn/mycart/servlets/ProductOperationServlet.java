@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @MultipartConfig
 public class ProductOperationServlet extends HttpServlet {
@@ -57,7 +59,13 @@ public class ProductOperationServlet extends HttpServlet {
                 String pName = request.getParameter("pName");
                 String pDesc = request.getParameter("pDesc");
                 float pPrice = Float.parseFloat(request.getParameter("pPrice"));
-                float pDiscount = Float.parseFloat(request.getParameter("pDiscount"));
+                float pDiscountRaw = Float.parseFloat(request.getParameter("pDiscount"));
+                
+                // Convert the value into BigDecimal type with 2 digits after the unit
+                BigDecimal decimalArrondi = BigDecimal.valueOf(pDiscountRaw).setScale(2, RoundingMode.HALF_UP);
+                
+                // Get round value as float number
+                float pDiscount= decimalArrondi.floatValue();
                 int pQuantity = Integer.parseInt(request.getParameter("pQuantity"));
                 int catId = Integer.parseInt(request.getParameter("catId"));
                 
